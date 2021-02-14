@@ -1,8 +1,43 @@
-// // Within your javascript file (example: app.js), create separate JS object literals for each shop location that outputs the following to the sales.html file:
+var hours = ['6:00 AM','7:00 AM','8:00 AM','9:00 AM','10:00 AM','11:00 AM','12:00 PM','1:00 PM','2:00 PM','3:00 PM','4:00 PM','5:00 PM','6:00 PM','7:00 PM'];
+const Seattle = {
+    minCustomers: 23,
+    maxCustomers: 65,
+    avgCookies: 6.3,
+    hrCookies:[],
+    randCustomers: function(){
+     return Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1)) + this.minCustomers
+    },
+    ranCookiesHour: function(){
+    let total = 0
+     for (let i = 0; i < array.hours; i++) {
+         hrCookies[i] = this.randCustomers*this.avgCookies;
+         let out = hours[i]+": "+hrCookies[i]+" cookies";
+         this.hrCookies.push(out);
+         console.log(out);
+         total = total + cookiesHour
+     }
+     console.log("Total:"+total+" cookies") 
+    },
+    
+   
+//    render: function() {
+//       constant h1E1 = document.createElement('h1');
+//       main.appendChild(h1E1);
+     
+//       constant ulE2 = document.createElement('ul');
+//       main.appendChild(ulE2);
+     
+//       for (let i = 0; i < hours.length; i++) {
+//           constant ilE3 = document.createElement('li');
+//           ulE2.appendChild(ilE3)
+//           ilE3.textContent = 
+//           constant ilE3 = array[i]; 
+//       }
+          
+//       }
+     
+    
+      }
+   }
 
-// Stores the min/max hourly customers, and the average cookies per customer, in object properties
-// Uses a method of that object to generate a random number of customers per hour. Objects/Math/random
-// Calculate and store the simulated amounts of cookies purchased for each hour at each location using average cookies purchased and the random number of customers generated
-// Store the results for each location in a separate array… perhaps as a property of the object representing that location
-// Display the values of each array as unordered lists in the browser
-// Calculating the sum of these hourly totals; your output for each location should look like this:
+}
