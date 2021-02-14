@@ -1,6 +1,6 @@
 # LAB - 06
 # Salmon Cookies
-I built a web page that shows the dynamic sales data for a cookies shops which have different locations around the world.
+I built a web page that shows the dynamic daily sales data for a cookies shop with different locations around the world.
 
 **Author:** *Aseel Alzweri*
 *https://github.com/Aseel-Z/cookie-stand*
