@@ -1,5 +1,5 @@
-var hours = ['6:00 AM','7:00 AM','8:00 AM','9:00 AM','10:00 AM','11:00 AM','12:00 PM','1:00 PM','2:00 PM','3:00 PM','4:00 PM','5:00 PM','6:00 PM','7:00 PM'];
 const Seattle = {
+    name: 'Seattle',
     minCustomers: 23,
     maxCustomers: 65,
     avgCookies: 6.3,
@@ -7,37 +7,38 @@ const Seattle = {
     randCustomers: function(){
      return Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1)) + this.minCustomers
     },
-    ranCookiesHour: function(){
-    let total = 0
+    render: function(){
+     const container = document.getElementById('sales');
+     console.log(container);
+     const section1 = document.createElement('section');
+     container.appendChild(section1)
+     const h1E1 = document.createElement('h1');
+     section1.appendChild(h1E1);
+     const ulE2 = document.createElement('ul');
+     section1.appendChild(ulE2);
+     const hours = ['6:00 AM','7:00 AM','8:00 AM','9:00 AM','10:00 AM','11:00 AM','12:00 PM','1:00 PM','2:00 PM','3:00 PM','4:00 PM','5:00 PM','6:00 PM','7:00 PM'];
+     let total = 0
      for (let i = 0; i < array.hours; i++) {
-         hrCookies[i] = this.randCustomers*this.avgCookies;
+         cookSale = this.randCustomers*this.avgCookies;
+         cookSale = hrCookies[i]
          let out = hours[i]+": "+hrCookies[i]+" cookies";
          this.hrCookies.push(out);
-         console.log(out);
-         total = total + cookiesHour
+         total = total + cookSale;
+         const Eli = document.createElement('li');
+         ulE2.appendChild(Eli);
+         Eli.textContent = out
+    } 
+    const E4li = document.createElement
+    section1.appendChild(E4li)
+    E4li.textContent = "Total:"+total+" cookies"
+    
      }
-     console.log("Total:"+total+" cookies") 
+     
     },
-    
-   
-//    render: function() {
-//       constant h1E1 = document.createElement('h1');
-//       main.appendChild(h1E1);
-     
-//       constant ulE2 = document.createElement('ul');
-//       main.appendChild(ulE2);
-     
-//       for (let i = 0; i < hours.length; i++) {
-//           constant ilE3 = document.createElement('li');
-//           ulE2.appendChild(ilE3)
-//           ilE3.textContent = 
-//           constant ilE3 = array[i]; 
-//       }
-          
-//       }
-     
-    
-      }
-   }
+    console.log(Seattle);
+    Seattle.render(); 
 
-}
+   
+
+    
+     
