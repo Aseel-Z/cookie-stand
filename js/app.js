@@ -3,7 +3,7 @@ function getRandomCustomers(min,max) {
     return Math.floor(Math.random()*(max-min+1))+min  
 }
 let hours = ['Locations','6:00 AM','7:00 AM','8:00 AM','9:00 AM','10:00 AM','11:00 AM','12:00 PM','1:00 PM','2:00 PM','3:00 PM','4:00 PM','5:00 PM','6:00 PM','7:00 PM','Location Total'];
-// const branches = ['Seattle', 'Tokyo', 'Dubai', 'Paris', 'Lima','Total/Hour'];
+let branches = [];
 
 const container = document.getElementById('sales');
 console.log(container);
@@ -23,7 +23,6 @@ for (let i = 0; i < hours.length; i++) {
   thEl.textContent = hours[i];
 };
 
-
 function Store(location,minCustomers,maxCustomers,avgCookies) {
   this.location = location;
   this.minCustomers = minCustomers;
@@ -31,6 +30,7 @@ function Store(location,minCustomers,maxCustomers,avgCookies) {
   this.avgCookies = avgCookies;
   this.total = 0;
   this.hrCookies = [];
+  branches.push(this)
 }
 
 Store.prototype.cookiePerHourCal = function(){
@@ -38,14 +38,12 @@ Store.prototype.cookiePerHourCal = function(){
      let cookiePerHour = Math.floor(getRandomCustomers(this.minCustomers,this.maxCustomers)*this.avgCookies);
      this.hrCookies.push(cookiePerHour);
      this.total +=  cookiePerHour;
-    //  console.table(this)
   }
-
+}
 Store.prototype.render = function(){
 
   this.cookiePerHourCal();
  
-  // for (let i = 0; i < branches.length; i++) {
   let trEl2 = document.createElement('tr');
   tableEl.appendChild(trEl2);
 
@@ -53,19 +51,48 @@ Store.prototype.render = function(){
   trEl2.appendChild(tdEl3);
   tdEl3.textContent = this.location;
   
-    for (let j = 0; j < hours.length-2; j++) {
-      let tdEl4 = document.createElement('td');
-      trEl2.appendChild(tdEl4);
-      tdEl4.textContent = this.hrCookies[j];
-    }
-  // let tdE5 = createElement('td');
-  // trEl2.appendChild(tdE5);
-  // tdE5.textContent = this.total;
- }}
+  
+  for (let j = 0; j < hours.length-2; j++) {
+    let tdEl4 = document.createElement('td');
+    trEl2.appendChild(tdEl4);
+    tdEl4.textContent = this.hrCookies[j];
+  }
 
+  let tdEl5 = document.createElement('td');
+  trEl2.appendChild(tdEl5);
+  tdEl5.textContent = this.total;
+ }
+
+function footerRender() {
+let El9 = document.createElement('tr');
+tableEl.appendChild(El9);
+
+const El11 = document.createElement('th');
+El9.appendChild(El11);
+El11.textContent = "Total/Hour";
+let totalOfTotals = 0;
+for (let i = 0; i < hours.length-2; i++) {
+  let hourTotal = 0;
+ for (let k = 0; k < branches.length; k++) {
+   hourTotal += branches[k].hrCookies[i];
+   totalOfTotals += hourTotal;
+ }
+
+ let El12 = document.createElement('td');
+ El9.appendChild(El12);
+ El12.textContent = hourTotal;
+}
+let El13 = document.createElement('td');
+El9.appendChild(El13);
+El13.textContent = totalOfTotals;
+}
 const location1 = new Store('Seattle',23,65,6.3);
 location1.cookiePerHourCal();
 location1.render();
+
+// branch = [L1,L2,L3,L4] it is array of objects 
+// so when to get a specific property objectName.property
+
 
 const location2 = new Store('Tokyo',3,24,1.2);
 location2.cookiePerHourCal();
@@ -86,7 +113,10 @@ const location5 = new Store('Lima',2,16,4.6);
 location5.cookiePerHourCal();
 location5.render();
 
+footerRender();
 
+// console.log(branches)
+// footerRender();
 
 //  console.log (Store.cookiePerHourCal());
 //  console.log(Store.render());
