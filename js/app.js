@@ -108,7 +108,7 @@ for (let i = 0; i < branches.length; i++) {
  
 }
 
-
+footerRender();
 
 let form1 = document.getElementById("new-branch");
 form1.addEventListener("submit", function(e){
@@ -118,14 +118,12 @@ const minCustomers = e.target.minCustomers1.value;
 const maxCustomers = e.target.maxCustomers1.value;
 const avgCookies = e.target.avgCookies1.value;
 let newBranch = new Store (location,minCustomers,maxCustomers,avgCookies);
+// El9.remove();
 // delete footer
 newBranch.render();
 footerRender();
 })
 
-footerRender();
-
-console.log(branches.length);
 
 // const location2 = new Store('Tokyo',3,24,1.2);
 // location2.cookiePerHourCal();
