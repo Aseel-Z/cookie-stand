@@ -2,7 +2,7 @@
 function getRandomCustomers(min,max) {
     return Math.floor(Math.random()*(max-min+1))+min  
 }
-let hours = ['Locations','6:00 AM','7:00 AM','8:00 AM','9:00 AM','10:00 AM','11:00 AM','12:00 PM','1:00 PM','2:00 PM','3:00 PM','4:00 PM','5:00 PM','6:00 PM','7:00 PM','Location Total'];
+const hours = ['Locations','6:00 AM','7:00 AM','8:00 AM','9:00 AM','10:00 AM','11:00 AM','12:00 PM','1:00 PM','2:00 PM','3:00 PM','4:00 PM','5:00 PM','6:00 PM','7:00 PM','Location Total'];
 let branches = [];
 
 const container = document.getElementById('sales');
@@ -34,11 +34,16 @@ function Store(location,minCustomers,maxCustomers,avgCookies) {
 }
 
 Store.prototype.cookiePerHourCal = function(){
-  for (let i = 0; i < hours.length; i++) {
+  for (let m = 0; m < hours.length-2; m++) {
      let cookiePerHour = Math.floor(getRandomCustomers(this.minCustomers,this.maxCustomers)*this.avgCookies);
      this.hrCookies.push(cookiePerHour);
-     this.total +=  cookiePerHour;
+     this.total += cookiePerHour;
+    //  console.log(hours.length)
+    //  console.log(cookiePerHour);
+    //  console.log(this.total);
+    //  console.log("--")
   }
+  
 }
 Store.prototype.render = function(){
 
@@ -50,7 +55,6 @@ Store.prototype.render = function(){
   let tdEl3 = document.createElement('th');
   trEl2.appendChild(tdEl3);
   tdEl3.textContent = this.location;
-  
   
   for (let j = 0; j < hours.length-2; j++) {
     let tdEl4 = document.createElement('td');
@@ -86,34 +90,61 @@ let El13 = document.createElement('td');
 El9.appendChild(El13);
 El13.textContent = totalOfTotals;
 }
-const location1 = new Store('Seattle',23,65,6.3);
-location1.cookiePerHourCal();
-location1.render();
+
+
 
 // branch = [L1,L2,L3,L4] it is array of objects 
 // so when to get a specific property objectName.property
 
-
-const location2 = new Store('Tokyo',3,24,1.2);
-location2.cookiePerHourCal();
-location2.render();
-
-
-const location3 = new Store('Dubai',11,38,3.7);
-location3.cookiePerHourCal();
-location3.render();
+new Store('Seattle',23,65,6.3);
+// new Store('Tokyo',3,24,1.2);
+// new Store('Dubai',11,38,3.7);
+// new Store('Paris',20,38,2.3);
+// new Store('Lima',2,16,4.6);
 
 
-const location4 = new Store('Paris',20,38,2.3);
-location4.cookiePerHourCal();
-location4.render();
-
-
-const location5 = new Store('Lima',2,16,4.6);
-location5.cookiePerHourCal();
-location5.render();
+for (let i = 0; i < branches.length; i++) {
+  branches[i].render();
+ 
+}
 
 footerRender();
+
+let form1 = document.getElementById("new-branch");
+form1.addEventListener("submit", function(e){
+e.preventDefault();
+const location = e.target.location1.value;
+const minCustomers = e.target.minCustomers1.value;
+const maxCustomers = e.target.maxCustomers1.value;
+const avgCookies = e.target.avgCookies1.value;
+let newBranch = new Store (location,minCustomers,maxCustomers,avgCookies);
+// El9.remove();
+// delete footer
+newBranch.render();
+footerRender();
+})
+
+
+// const location2 = new Store('Tokyo',3,24,1.2);
+// location2.cookiePerHourCal();
+// location2.render();
+
+
+// const location3 = new Store('Dubai',11,38,3.7);
+// location3.cookiePerHourCal();
+// location3.render();
+
+
+// const location4 = new Store('Paris',20,38,2.3);
+// location4.cookiePerHourCal();
+// location4.render();
+
+
+// const location5 = new Store('Lima',2,16,4.6);
+// location5.cookiePerHourCal();
+// location5.render();
+
+
 
 // console.log(branches)
 // footerRender();
