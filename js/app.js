@@ -2,7 +2,7 @@
 function getRandomCustomers(min,max) {
     return Math.floor(Math.random()*(max-min+1))+min  
 }
-let hours = ['Locations','6:00 AM','7:00 AM','8:00 AM','9:00 AM','10:00 AM','11:00 AM','12:00 PM','1:00 PM','2:00 PM','3:00 PM','4:00 PM','5:00 PM','6:00 PM','7:00 PM','Location Total'];
+const hours = ['Locations','6:00 AM','7:00 AM','8:00 AM','9:00 AM','10:00 AM','11:00 AM','12:00 PM','1:00 PM','2:00 PM','3:00 PM','4:00 PM','5:00 PM','6:00 PM','7:00 PM','Location Total'];
 let branches = [];
 
 const container = document.getElementById('sales');
@@ -37,9 +37,13 @@ Store.prototype.cookiePerHourCal = function(){
   for (let m = 0; m < hours.length-2; m++) {
      let cookiePerHour = Math.floor(getRandomCustomers(this.minCustomers,this.maxCustomers)*this.avgCookies);
      this.hrCookies.push(cookiePerHour);
-     this.total += this.hrCookies[m];
+     this.total += cookiePerHour;
+    //  console.log(hours.length)
+    //  console.log(cookiePerHour);
+    //  console.log(this.total);
+    //  console.log("--")
   }
-  console.log(this.total)
+  
 }
 Store.prototype.render = function(){
 
@@ -93,35 +97,35 @@ El13.textContent = totalOfTotals;
 // so when to get a specific property objectName.property
 
 new Store('Seattle',23,65,6.3);
-new Store('Tokyo',3,24,1.2);
-new Store('Dubai',11,38,3.7);
-new Store('Paris',20,38,2.3);
-new Store('Lima',2,16,4.6);
+// new Store('Tokyo',3,24,1.2);
+// new Store('Dubai',11,38,3.7);
+// new Store('Paris',20,38,2.3);
+// new Store('Lima',2,16,4.6);
 
 
 for (let i = 0; i < branches.length; i++) {
-  branches[i].cookiePerHourCal();
   branches[i].render();
-  
+ 
 }
 
 
 
-let form1 = document.getElementById("100");
-form1.addEventListener("submit", function(event){
-event.preventDefault();
-const location = event.target.location1.value;
-const minCustomers = event.target.minCustomers1.value;
-const maxCustomers = event.target.maxCustomers1.value;
-const avgCookies = event.target.avgCookies1.value;
-const newBranch = new Store (location,minCustomers,maxCustomers,avgCookies);
+let form1 = document.getElementById("new-branch");
+form1.addEventListener("submit", function(e){
+e.preventDefault();
+const location = e.target.location1.value;
+const minCustomers = e.target.minCustomers1.value;
+const maxCustomers = e.target.maxCustomers1.value;
+const avgCookies = e.target.avgCookies1.value;
+let newBranch = new Store (location,minCustomers,maxCustomers,avgCookies);
+// delete footer
+newBranch.render();
+footerRender();
 })
-branches.push(newBranch);
-newBranch.cookiePerHourCal();
-newBranch.render()
+
 footerRender();
 
-console.log(branches.length)
+console.log(branches.length);
 
 // const location2 = new Store('Tokyo',3,24,1.2);
 // location2.cookiePerHourCal();
