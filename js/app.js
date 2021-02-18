@@ -104,15 +104,15 @@ for (let i = 0; i < branches.length; i++) {
  
 }
 
-footerRender();
+// footerRender();
 
 let form1 = document.getElementById("new-branch");
-form1.addEventListener("submit", function(e){
-e.preventDefault();
-const location = e.target.location1.value;
-const minCustomers = e.target.minCustomers1.value;
-const maxCustomers = e.target.maxCustomers1.value;
-const avgCookies = e.target.avgCookies1.value;
+form1.addEventListener("submit", function(event){
+event.preventDefault();
+const location = event.target.location1.value;
+const minCustomers = event.target.minCustomers1.value;
+const maxCustomers = event.target.maxCustomers1.value;
+const avgCookies = event.target.avgCookies1.value;
 let newBranch = new Store (location,minCustomers,maxCustomers,avgCookies);
 // El9.remove();
 // delete footer
