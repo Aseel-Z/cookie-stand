@@ -1,9 +1,35 @@
-* {
+/* * {
     color: rgb(77, 39, 39);
     background-color: rgb(197, 173, 141);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align:center;
 
+} */
+
+
+
+body header nav{
+    text-align: center;
+    margin-top: 1.5em;
+    margin-bottom: 2em;
+    font-family: "Fredoka One";
+    font-size: medium;
+    background-color: rgb(129, 94, 47);
+    color: rgb(233, 198, 153);
+    position: relative;;
+}
+
+body header nav a{
+    margin-left:4em;
+    margin-right: 4em;
+    margin-bottom: 2em;
+    margin-top: 1em;
+
+}
+
+
+body main h1 {
+    font-family:"Fredoka One" ;
 }
 
 
