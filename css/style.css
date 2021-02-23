@@ -1,10 +1,179 @@
-* {
-    color: rgb(77, 39, 39);
-    background-color: rgb(197, 173, 141);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    text-align:center;
 
+
+* {
+    background-color:  rgb(243, 224, 200);
 }
 
 
+
+body header nav{
+    text-align: center;
+    font-weight: bolder;
+    font-family: "Caveat";
+    font-size:1.5em;
+    background-color:rgb(77, 39, 39);
+    color: rgb(230, 212, 189);
+    position: relative;
+    height: 1.6em;
+    width: 100%;
+}
+body header nav a{
+    margin-left:4em;
+    margin-right: 4em;
+    margin-top: 1em;
+    background-color:rgb(77, 39, 39);
+    display: inline-block;
+    margin-top: .3em;
+}
+
+
+body main h1 {
+    font-family:"Caveat" ;
+    font-weight: bolder;
+    font-size:4em;
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    color:rgb(77, 39, 39);;
+}
+
+#salmonfish {
+    margin-left: 23%; 
+}
+
+#section1 {
+    font-family: "Caveat";
+    font-size:2.5em ;
+    text-align: center;
+    margin-top: 3em;
+    margin-bottom: 1em;
+    color: rgb(77, 39, 39);
+    font-weight:bold ;
+}
+
+
+#section2 {
+    font-family: "Caveat";
+    font-size:xx-large ;
+    text-align: center;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+    color: rgb(77, 39, 39);
+    font-weight: normal;
+}
+
+#section2 ul {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+#section2 ul li {
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+#img1 {
+    margin-left: 23%;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    border-radius: 50%
+}
+
+
+.footer2 div {
+    margin-top: 3em;
+    font-family: "Caveat";
+    font-size:1em;
+    font-weight: bold;
+    background-color: rgb(77, 39, 39);
+    height: 1.8em;
+    position: absolute;
+    width: 100%;  
+    opacity: .9; 
+}
+
+.footer2 div a {
+    position: relative;
+    text-align: center;
+    margin-left: 6.5em;
+    margin-right: 6.5em;
+    color:rgb(230, 212, 189);
+    background-color:rgb(77, 39, 39);
+    display: inline-block;
+    margin-top: .3em;
+    opacity: .9; 
+}
+
+article table {
+    color:rgb(77, 39, 39);
+    text-align: center;
+    margin-top: 4em;
+    margin-bottom: 4em;
+    margin-left: 6em;
+    font-size:larger;
+    font-family:"Caveat";
+    font-weight: normal;
+    border: rgb(77, 39, 39);
+    border-style:groove;
+    width: 89%;
+    
+}
+
+table th {
+    border: rgb(77, 39, 39);
+    border-style:groove;
+    font-weight: bolder;
+ 
+}
+
+table tr td {
+    border: rgb(77, 39, 39);
+    border-style:groove; 
+}
+
+main section form fieldset label{
+    margin-top: 4em;
+    margin-bottom: 4em;
+    margin-left: 4em;
+    font-family:"Caveat";
+    font-weight: bolder;
+    text-align: center;
+   
+}
+main section form fieldset legend{
+    margin-top: 3em;
+    margin-bottom: 3em;
+   
+    font-family:"Caveat";
+    font-weight: bolder;
+    text-align: center;
+    font-size: 1.5em;
+    color: rgb(77, 39, 39);
+    
+}
+header .salesh1 {
+  margin-top: 2em;
+    margin-bottom: 1em;
+    text-align: center;
+    font-family:"Caveat";
+    font-weight: bolder;
+    font-size: 2em;
+    color: rgb(77, 39, 39);
+}
+
+body .salesfooter{
+    display: inline-block;
+    position: absolute;
+    margin-top: 8em;
+    font-family: "Fredoka One";
+    width: 100%;
+}
+body .salesfooter a {
+    margin-top: 8em;
+    margin-left: 40em;
+    color: rgb(77, 39, 39);
+    position: relative;
+  
+   
+
+}
 
